@@ -9,8 +9,10 @@ from scipy.spatial import distance
 from drowsiness_model import get_trained_model
 
 # 🔹 Initialize pygame for alert sound
-pygame.mixer.init()
-pygame.mixer.music.load("alert.mp3")
+# 🔹 Use Streamlit Audio Instead of Pygame
+def play_alert_sound():
+    st.audio("alert.mp3", format="audio/mp3", autoplay=True)
+
 
 # 🔹 Load Dlib face detector & landmark predictor
 PREDICTOR_PATH = "shape_predictor_68_face_landmarks.dat"
