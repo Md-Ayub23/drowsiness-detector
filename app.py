@@ -120,7 +120,7 @@ def main():
                 # 🔔 Trigger Alert if Either Condition Happens
                 if drowsy_alert_triggered:
                     cv2.putText(frame, "🚨 DROWSY ALERT!", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-                    pygame.mixer.music.play()
+                    play_alert_sound()
                     drowsy_alert_triggered = False  # Reset after alert
 
                 cv2.putText(frame, f"EAR: {ear:.2f} Head Tilt: {head_tilt:.2f}", (10, 400), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
